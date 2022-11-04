@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="Keywords" content="">
+  <meta property="og:url" content="" />
+  <meta property="og:title" content="start" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/null.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__owerlay">
+        <div class="header__inner">
+          <div class="header__close">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25"
+              viewBox="0 0 25 25">
+              <defs>
+                <path id="avzva"
+                  d="M691.485 160.07l-1.414 1.415-7.071-7.071-7.071 7.071-1.414-1.414 7.07-7.071-7.07-7.071 1.414-1.415 7.07 7.071 7.072-7.07 1.414 1.414-7.07 7.07z" />
+              </defs>
+              <g>
+                <g transform="translate(-674 -144)">
+                  <use fill="#fff" xlink:href="#avzva" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="header__top">
+            <div class="container">
+              <div class="header__top-inner">
+                <a class="header__logo header__logo--dt" href="/"><img src="images/logo.png" alt="logo" /></a>
+                <a class="header__logo header__logo--mob" href="/"><img src="images/logo_mob.png" alt="logo" /></a>
+                <div class="header__top-block">
+                  <a class="header__link" href="tel:+41445152591">+41 44 5152591</a>
+                  <a class="header__watsapp" href="https://wa.me/41765148874?text=I%20need%20more%20information%21"
+                    target="_blank">
+                    <svg width="30px" height="30px" viewBox="0 0 100 100" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM69.7626 28.9928C64.6172 23.841 57.7739 21.0027 50.4832 21C35.4616 21 23.2346 33.2252 23.2292 48.2522C23.2274 53.0557 24.4823 57.7446 26.8668 61.8769L23 76L37.4477 72.2105C41.4282 74.3822 45.9107 75.5262 50.4714 75.528H50.4823C65.5029 75.528 77.7299 63.301 77.7363 48.2749C77.7408 40.9915 74.9089 34.1446 69.7626 28.9928ZM62.9086 53.9588C62.2274 53.6178 58.8799 51.9708 58.2551 51.7435C57.6313 51.5161 57.1766 51.4024 56.7228 52.0845C56.269 52.7666 54.964 54.2998 54.5666 54.7545C54.1692 55.2092 53.7718 55.2656 53.0915 54.9246C52.9802 54.8688 52.8283 54.803 52.6409 54.7217C51.6819 54.3057 49.7905 53.4855 47.6151 51.5443C45.5907 49.7382 44.2239 47.5084 43.8265 46.8272C43.4291 46.1452 43.7837 45.7769 44.1248 45.4376C44.3292 45.2338 44.564 44.9478 44.7987 44.662C44.9157 44.5194 45.0328 44.3768 45.146 44.2445C45.4345 43.9075 45.56 43.6516 45.7302 43.3049C45.7607 43.2427 45.7926 43.1776 45.8272 43.1087C46.0545 42.654 45.9409 42.2565 45.7708 41.9155C45.6572 41.6877 45.0118 40.1167 44.4265 38.6923C44.1355 37.984 43.8594 37.3119 43.671 36.8592C43.1828 35.687 42.6883 35.69 42.2913 35.6924C42.2386 35.6928 42.1876 35.6931 42.1386 35.6906C41.7421 35.6706 41.2874 35.667 40.8336 35.667C40.3798 35.667 39.6423 35.837 39.0175 36.5191C38.9773 36.5631 38.9323 36.6111 38.8834 36.6633C38.1738 37.4209 36.634 39.0648 36.634 42.2002C36.634 45.544 39.062 48.7748 39.4124 49.2411L39.415 49.2444C39.4371 49.274 39.4767 49.3309 39.5333 49.4121C40.3462 50.5782 44.6615 56.7691 51.0481 59.5271C52.6732 60.2291 53.9409 60.6475 54.9303 60.9612C56.5618 61.4796 58.046 61.4068 59.22 61.2313C60.5286 61.0358 63.2487 59.5844 63.8161 57.9938C64.3836 56.4033 64.3836 55.0392 64.2136 54.7554C64.0764 54.5258 63.7545 54.3701 63.2776 54.1395C63.1633 54.0843 63.0401 54.0247 62.9086 53.9588Z"
+                        fill="#000000"></path>
+                    </svg>
+                  </a>
+                  <button class="header__btn btn popup-contact" type="button">Callback</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <nav class="header__nav">
+            <ul class="header__nav-list">
+              <li class="header__nav-item">
+                <a href="/" class="header__nav-link">BUSINESS IN SWITZERLAND</a>
+              </li>
+              <li class="header__nav-item">
+                <a href="/" class="header__nav-link">TAXES IN SWITZERLAND</a>
+              </li>
+              <li class="header__nav-item">
+                <a href="/" class="header__nav-link">ECONOMIC</a>
+              </li>
+              <li class="header__nav-item">
+                <a href="/" class="header__nav-link">IMMIGRATION</a>
+              </li>
+              <li class="header__nav-item">
+                <a href="/" class="header__nav-link">INVESTMENTS</a>
+              </li>
+              <li class="header__nav-item">
+                <a href="/" class="header__nav-link">CONTACTS</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="header__burger">
+        <span></span>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="breadcrams">
+        <div class="container">
+          <ul class="breadcrams__inner">
+            <li class="breadcrams__item">
+              <a href="/" class="breadcrams__link">Home</a>
+            </li>
+            <li class="breadcrams__item">
+              <span class="breadcrams__link">Page-cards</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="cards">
+        <div class="container">
+          <h1 class="cards__title title">BUSINESS IN SWITZERLAND</h1>
+          <div class="cards__box box">
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/4.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">05-09-2018</p>
+                <h4 class="box__item-title">
+                  How to Establish a Business in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/5.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">16-02-2018</p>
+                <h4 class="box__item-title">
+                  Opening a Corporation in 2022 - your guideline for business starting in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/6.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">05-03-2018</p>
+                <h4 class="box__item-title">
+                  Double Tax Treaties in Switzerland — your guideline for business starting in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/4.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">05-09-2018</p>
+                <h4 class="box__item-title">
+                  How to Establish a Business in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/5.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">16-02-2018</p>
+                <h4 class="box__item-title">
+                  Opening a Corporation in 2022 - your guideline for business starting in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/6.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">05-03-2018</p>
+                <h4 class="box__item-title">
+                  Double Tax Treaties in Switzerland — your guideline for business starting in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/4.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">05-09-2018</p>
+                <h4 class="box__item-title">
+                  How to Establish a Business in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/5.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">16-02-2018</p>
+                <h4 class="box__item-title">
+                  Opening a Corporation in 2022 - your guideline for business starting in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/6.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">05-03-2018</p>
+                <h4 class="box__item-title">
+                  Double Tax Treaties in Switzerland — your guideline for business starting in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/4.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">05-09-2018</p>
+                <h4 class="box__item-title">
+                  How to Establish a Business in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/5.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">16-02-2018</p>
+                <h4 class="box__item-title">
+                  Opening a Corporation in 2022 - your guideline for business starting in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/6.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">05-03-2018</p>
+                <h4 class="box__item-title">
+                  Double Tax Treaties in Switzerland — your guideline for business starting in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/4.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">05-09-2018</p>
+                <h4 class="box__item-title">
+                  How to Establish a Business in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/5.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">16-02-2018</p>
+                <h4 class="box__item-title">
+                  Opening a Corporation in 2022 - your guideline for business starting in Switzerland
+                </h4>
+              </div>
+            </div>
+            <div class="box__item">
+              <a href="#" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/swissfirma/6.jpg" alt="photo" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data">05-03-2018</p>
+                <h4 class="box__item-title">
+                  Double Tax Treaties in Switzerland — your guideline for business starting in Switzerland
+                </h4>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="cards__btn btn">Show more</button>
+        </div>
+      </section>
+
+      <div class="quest-one quest-one--cards">
+        <div class="container">
+          <div class="quest">
+            <div class="quest__content">
+              <p class="quest__title">HAVE A questions?</p>
+              <p class="quest__subtitle">ASK now!</p>
+            </div>
+            <button type="button" class="quest__btn btn popup-ask">GET feedback NOW!</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="subscribe">
+        <div class="container">
+          <h2 class="subscribe__title title">subscribe</h2>
+          <div class="subscribe__inner">
+            <div class="subscribe__item">
+              <p class="subscribe__item-title">TO OUR NEWS</p>
+              <form action="#" method="post" class="subscribe__form">
+                <label class="subscribe__label">
+                  <input type="email" name="email" class="subscribe__input" value="" placeholder="Your mail" required>
+                </label>
+                <button type="submit" class="subscribe__btn">subscribe</button>
+              </form>
+            </div>
+            <div class="subscribe__item">
+              <p class="subscribe__item-title">TO SWISS BUSINESS CHANNEL</p>
+              <iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no"
+                style="position: static; top: 0px; width: 187px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 48px;"
+                tabindex="0" vspace="0" width="100%" id="I0_1667470979000" name="I0_1667470979000"
+                src="https://www.youtube.com/subscribe_embed?usegapi=1&amp;channelid=UCxW3M32_Hff2eRenqTKRQgw&amp;layout=full&amp;count=default&amp;origin=https%3A%2F%2Fswissfirma.com&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.ru.wfyH1w8kjXM.O%2Fd%3D1%2Frs%3DAHpOoo-T0KCZioWX0DjqiPV-fFLt1dVvMA%2Fm%3D__features__#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1667470979000&amp;_gfid=I0_1667470979000&amp;parent=https%3A%2F%2Fswissfirma.com&amp;pfname=&amp;rpctoken=15549904"
+                data-gapiattached="true"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__item">
+            <p class="footer__title">MENU</p>
+            <ul class="footer__list">
+              <li class="footer__li">
+                <a href="/" class="footer__link">Business in Switzerland</a>
+              </li>
+              <li class="footer__li">
+                <a href="/" class="footer__link">Taxes in Switzerland</a>
+              </li>
+              <li class="footer__li">
+                <a href="/" class="footer__link">Economic</a>
+              </li>
+              <li class="footer__li">
+                <a href="/" class="footer__link">Immigration</a>
+              </li>
+              <li class="footer__li">
+                <a href="/" class="footer__link">Investments</a>
+              </li>
+              <li class="footer__li">
+                <a href="/" class="footer__link">Contacts</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <p class="footer__title">OUR SERVICES</p>
+            <ul class="footer__list">
+              <li class="footer__li">
+                <a href="/" class="footer__link">Verify the company name</a>
+              </li>
+              <li class="footer__li">
+                <a href="/" class="footer__link">Tax calculator</a>
+              </li>
+              <li class="footer__li">
+                <a href="/" class="footer__link">Company formation online</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <p class="footer__title">NEWS</p>
+            <ul class="footer__list">
+              <li class="footer__li">
+                <a href="/" class="footer__link">All news</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__item">
+            <p class="footer__title">SOCIAL</p>
+            <div class="footer__social">
+              <a class="footer__social-link" href="https://www.facebook.com/goldblum.and.partners" target="_blank">
+                <img class="footer__social-img" alt="facebook-icon" src="images/icons/facebook.png">
+              </a>
+              <a class="footer__social-link" href="https://www.youtube.com/channel/UCxW3M32_Hff2eRenqTKRQgw"
+                target="_blank">
+                <img class="footer__social-img" alt="facebook-icon" src="images/icons/youtube.png">
+              </a>
+            </div>
+          </div>
+          <div class="footer__item">
+            <p class="footer__title">CONTACTS</p>
+            <div class="footer__contact">
+              <a href="tel:+41445152591" class="footer__link footer__link--tel">+41 44 5152591</a>
+              <a href="mailto:info@goldblum.ch" class="footer__link">info@goldblum.ch</a>
+            </div>
+            <button type="button" class="btn footer__btn popup-contact">REQUEST A CALL</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="popup popup--contact">
+    <div class="popup__body">
+      <div class="popup__content">
+        <div class="popup__form">
+          <h2 class="popup__title">Contact us</h2>
+          <form action="#" method="POST" class="contact-form">
+            <div class="contact-form__inputs">
+              <label class="contact-form__label">
+                <input type="text" autocomplete="name" name="Name" class="contact-form__input" value=""
+                  placeholder="Your name*" data-placeholder-tmp="" />
+                <div class="contact-form__input-error">Обязательное поле</div>
+              </label>
+              <label class="contact-form__label">
+                <input type="text" name="Input" class="contact-form__input" value="" placeholder="Country"
+                  data-placeholder-tmp="" />
+              </label>
+              <label class="contact-form__label">
+                <input type="text" name="Input_2" class="contact-form__input" value=""
+                  placeholder="Telephone country code*" data-placeholder-tmp="" />
+                <div class="contact-form__input-error">Обязательное поле</div>
+              </label>
+              <label class="contact-form__label">
+                <input type="tel" autocomplete="tel" name="Phone" class="contact-form__input" value=""
+                  placeholder="Phone*" data-placeholder-tmp="" />
+                <div class="contact-form__input-error">Обязательное поле</div>
+              </label>
+              <label class="contact-form__label">
+                <input type="text" autocomplete="email" name="Email" class="contact-form__input" value=""
+                  placeholder="E-mail*" data-placeholder-tmp="" />
+                <div class="contact-form__input-error">Обязательное поле</div>
+              </label>
+              <label class="contact-form__label">
+                <textarea name="Textarea" class="contact-form__textarea"></textarea>
+              </label>
+            </div>
+
+            <p class="contact-form__error">
+              Пожалуйста, заполните все обязательные поля
+            </p>
+
+            <button type="submit" class="contact-form__btn btn">
+              SEND
+            </button>
+            <p class="contact-form__police">Privacy police</p>
+          </form>
+        </div>
+        <!--<div class="popup__tnx">
+          <h2 class="popup__title">Thanks!</h2>
+        </div>-->
+        <div class="popup__close">
+          <img src="images/icons/close.svg" alt="close">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup popup--ask">
+    <div class="popup__body">
+      <div class="popup__content">
+        <div class="popup__form">
+          <h2 class="popup__title">HAVE A QUESTIONS?</h2>
+          <p class="popup__subtitle">ASK NOW!</p>
+          <form action="#" method="POST" class="contact-form">
+            <div class="contact-form__inputs">
+              <label class="contact-form__label">
+                <input type="text" autocomplete="name" name="Name" class="contact-form__input" value=""
+                  placeholder="Your name*" data-placeholder-tmp="" />
+                <div class="contact-form__input-error">Обязательное поле</div>
+              </label>
+              <label class="contact-form__label">
+                <input type="text" name="Input" class="contact-form__input" value="" placeholder="Country"
+                  data-placeholder-tmp="" />
+              </label>
+              <label class="contact-form__label">
+                <input type="text" name="Input_2" class="contact-form__input" value=""
+                  placeholder="Telephone country code*" data-placeholder-tmp="" />
+                <div class="contact-form__input-error">Обязательное поле</div>
+              </label>
+              <label class="contact-form__label">
+                <input type="tel" autocomplete="tel" name="Phone" class="contact-form__input" value=""
+                  placeholder="Phone*" data-placeholder-tmp="" />
+                <div class="contact-form__input-error">Обязательное поле</div>
+              </label>
+              <label class="contact-form__label">
+                <input type="text" autocomplete="email" name="Email" class="contact-form__input" value=""
+                  placeholder="E-mail*" data-placeholder-tmp="" />
+                <div class="contact-form__input-error">Обязательное поле</div>
+              </label>
+              <label class="contact-form__label">
+                <textarea name="Textarea" class="contact-form__textarea"></textarea>
+              </label>
+            </div>
+
+            <p class="contact-form__error">
+              Пожалуйста, заполните все обязательные поля
+            </p>
+
+            <button type="submit" class="contact-form__btn btn">
+              SEND
+            </button>
+            <p class="contact-form__police">Privacy police</p>
+          </form>
+        </div>
+        <!--<div class="popup__tnx">
+          <h2 class="popup__title">Thanks!</h2>
+        </div>-->
+        <div class="popup__close">
+          <img src="images/icons/close.svg" alt="close">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    //Filter
+    let boxArr = $(".box__item");
+    let boxArrNow =[];
+
+    for (let i = 0; i < boxArr.length; i++) {
+      const element = boxArr[i];
+      if(i > 8) {
+        $(element).addClass('close');
+        boxArrNow.push(element);
+      }
+    }
+
+    $(".cards__btn").on("click", function () {
+      let a = 0;
+      for (let i = 0; i < boxArrNow.length; i++) {
+        const element = boxArrNow[i];
+        a++
+        if (i > 2) {
+          $(element).removeClass('close');
+        }
+      }
+      if(a <= 3) {
+        $(".cards__btn").css("display", "none");
+      }
+    })
+  </script>
+</body>
+
+</html>
