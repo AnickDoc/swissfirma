@@ -1,0 +1,12 @@
+User-Agent: *
+Disallow: /page7042473.html
+Disallow: /page7042470.html
+Disallow: /page7101332.html
+Disallow: /error-page
+Disallow: /*_escaped_fragment_*
+Disallow:
+
+
+Sitemap: https://swissfirma.com/sitemap.xml
+Sitemap: https://swissfirma.com/sitemap-feeds.xml
+Host: https://swissfirma.com

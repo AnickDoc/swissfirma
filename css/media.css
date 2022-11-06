@@ -173,6 +173,30 @@
   .quest-one--page {
     padding: 20px 0;
   }
+
+  .article__img,
+  .article__video iframe {
+    height: 545px;
+  }
+
+  .article-two__ibg {
+    height: 100vh;
+  }
+
+  .article-two__title {
+    font-size: 50px;
+  }
+
+  .article-two h2 {
+    padding: 20px 0;
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .page-404__title {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -313,8 +337,81 @@
   .contacts,
   .all-news,
   .verify,
-  .calculator {
+  .calculator,
+  .company {
     padding: 30px 0 20px;
+  }
+
+  .company__form-wrap {
+    margin-bottom: 30px;
+  }
+
+  .company__form-btn {
+    padding: 10px 20px;
+  }
+
+  .company__form-subtitle {
+    font-size: 18px;
+  }
+
+  .contact-form__file-label {
+    font-size: 14px;
+  }
+
+  .article__img,
+  .article__video iframe {
+    height: 345px;
+  }
+
+  .article,
+  .other {
+    padding: 20px 0;
+  }
+
+  .article__box-inner {
+    padding: 20px;
+  }
+
+  .article__box-link {
+    font-size: 14px;
+  }
+
+  .article__box-date,
+  .article__box-author {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  .article-two__title {
+    font-size: 30px;
+  }
+
+  .article-two h2 {
+    padding: 0;
+    font-size: 22px;
+  }
+
+  .page-404__posts,
+  .page-404__search,
+  .page-404__categories {
+    margin-bottom: 40px;
+  }
+
+  .page-404__title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .page-404__title--2 {
+    padding-bottom: 20px;
+  }
+
+  .page-404__search-label {
+    width: auto;
+  }
+
+  .page-404__search-btn {
+    padding: 15px 40px;
   }
 }
 
@@ -368,5 +465,64 @@
 
   .calculator__form-btn {
     padding: 10px 30px;
+  }
+
+  .article__box-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .article__box-author,
+  .article__box-date {
+    margin-bottom: 10px;
+  }
+
+  .article__box-link {
+    margin: auto;
+  }
+
+  .comments {
+    padding: 0 0 20px;
+  }
+
+  .article__img,
+  .article__video iframe {
+    height: 250px;
+  }
+
+  .article-two__title {
+    font-size: 24px;
+  }
+
+  .article-two h2 {
+    font-size: 20px;
+  }
+
+  .article-two {
+    padding-bottom: 20px;
+  }
+
+  .page-404__item {
+    font-size: 16px;
+  }
+
+  .page-404__title {
+    font-size: 24px;
+  }
+
+  .page-404__search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .page-404__search-label {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .page-404 {
+    padding: 20px 0;
   }
 }

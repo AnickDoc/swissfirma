@@ -5,19 +5,19 @@
         <p class="footer__title">MENU</p>
         <ul class="footer__list">
           <li class="footer__li">
-            <a href="/" class="footer__link">Business in Switzerland</a>
+            <a href="page-cards" class="footer__link">Business in Switzerland</a>
           </li>
           <li class="footer__li">
-            <a href="/" class="footer__link">Taxes in Switzerland</a>
+            <a href="page-cards" class="footer__link">Taxes in Switzerland</a>
           </li>
           <li class="footer__li">
-            <a href="/" class="footer__link">Economic</a>
+            <a href="page-cards" class="footer__link">Economic</a>
           </li>
           <li class="footer__li">
-            <a href="/" class="footer__link">Immigration</a>
+            <a href="page-cards" class="footer__link">Immigration</a>
           </li>
           <li class="footer__li">
-            <a href="/" class="footer__link">Investments</a>
+            <a href="page-cards" class="footer__link">Investments</a>
           </li>
           <li class="footer__li">
             <a href="contacts" class="footer__link">Contacts</a>

@@ -1,3 +1,5 @@
+<?php require_once 'connect.php'?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,19 +69,19 @@
           <nav class="header__nav">
             <ul class="header__nav-list">
               <li class="header__nav-item">
-                <a href="/" class="header__nav-link">BUSINESS IN SWITZERLAND</a>
+                <a href="page-cards" class="header__nav-link">BUSINESS IN SWITZERLAND</a>
               </li>
               <li class="header__nav-item">
-                <a href="/" class="header__nav-link">TAXES IN SWITZERLAND</a>
+                <a href="page-cards" class="header__nav-link">TAXES IN SWITZERLAND</a>
               </li>
               <li class="header__nav-item">
-                <a href="/" class="header__nav-link">ECONOMIC</a>
+                <a href="page-cards" class="header__nav-link">ECONOMIC</a>
               </li>
               <li class="header__nav-item">
-                <a href="/" class="header__nav-link">IMMIGRATION</a>
+                <a href="page-cards" class="header__nav-link">IMMIGRATION</a>
               </li>
               <li class="header__nav-item">
-                <a href="/" class="header__nav-link">INVESTMENTS</a>
+                <a href="page-cards" class="header__nav-link">INVESTMENTS</a>
               </li>
               <li class="header__nav-item">
                 <a href="contacts" class="header__nav-link">CONTACTS</a>
