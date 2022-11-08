@@ -4,21 +4,11 @@
       <div class="footer__item">
         <p class="footer__title">MENU</p>
         <ul class="footer__list">
-          <li class="footer__li">
-            <a href="page-cards" class="footer__link">Business in Switzerland</a>
-          </li>
-          <li class="footer__li">
-            <a href="page-cards" class="footer__link">Taxes in Switzerland</a>
-          </li>
-          <li class="footer__li">
-            <a href="page-cards" class="footer__link">Economic</a>
-          </li>
-          <li class="footer__li">
-            <a href="page-cards" class="footer__link">Immigration</a>
-          </li>
-          <li class="footer__li">
-            <a href="page-cards" class="footer__link">Investments</a>
-          </li>
+          <?php foreach ($cats as $cat) : ?>
+            <li class="footer__li">
+              <a href="<?= $cat['url'] ?>" class="footer__link"><?= $cat['category'] ?></a>
+            </li>
+          <?php endforeach; ?>
           <li class="footer__li">
             <a href="contacts" class="footer__link">Contacts</a>
           </li>
@@ -28,13 +18,13 @@
         <p class="footer__title">OUR SERVICES</p>
         <ul class="footer__list">
           <li class="footer__li">
-            <a href="verify" class="footer__link">Verify the company name</a>
+            <a href="verify-the-company-name" class="footer__link">Verify the company name</a>
           </li>
           <li class="footer__li">
-            <a href="calculator" class="footer__link">Tax calculator</a>
+            <a href="tax-calculator" class="footer__link">Tax calculator</a>
           </li>
           <li class="footer__li">
-            <a href="formation" class="footer__link">Company formation online</a>
+            <a href="company-formation-online" class="footer__link">Company formation online</a>
           </li>
         </ul>
       </div>

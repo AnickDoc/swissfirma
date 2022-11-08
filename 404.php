@@ -1,4 +1,10 @@
-<?php include_once 'components/header.php' ?>
+<?php
+include_once 'connect.php';
+$articles = get_articles();
+$cats = get_cat();
+$rec_articles = get_recent_articles();
+$title = "404: Page not found";
+include_once 'components/header.php' ?>
 
 <main class="main">
 
@@ -10,7 +16,6 @@
       </p>
       <div class="page-404__search">
         <form action="#" class="page-404__search-form">
-
           <label class="page-404__search-label">
             <input type="search" class="page-404__search-input" placeholder="Search" style="color:#000000; border:1px solid #b9babc; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;">
             <img width="18px" class="t-site-search-close" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOTguNjUgOTYuNTVMNTIuMTEgNDkuOTMgOTguMzYgMy41Yy41OS0uNTkuNTktMS40NyAwLTIuMDZhMS40MiAxLjQyIDAgMDAtMi4wNiAwTDUwLjA1IDQ3Ljg3IDMuNjkgMS40NGExLjQyIDEuNDIgMCAwMC0yLjA1IDAgMS40MiAxLjQyIDAgMDAwIDIuMDZsNDYuMzUgNDYuNDNMMS40NCA5Ni41NUExLjQyIDEuNDIgMCAwMDMuNCA5OC42bDQ2LjU1LTQ2LjYyTDk2LjUgOTguNmMuMy4zLjY4LjM5Ljk4LjM5LjMgMCAuNjgtLjEuOTgtLjQuNjgtLjU4LjY4LTEuNDYuMi0yLjA1eiIgZmlsbD0iIzExMSIgc3Ryb2tlPSIjMTExIi8+PC9zdmc+" style="display: none;">
@@ -29,30 +34,25 @@
       <div class="page-404__posts">
         <h2 class="page-404__title page-404__title--2">Recent Posts</h2>
         <ul class="page-404__list">
-          <li class="page-404__item page-404__item--posts">
-            <a href="#" class="page-404__link">Property Lawyers Making Life Simpler To Live</a>
-          </li>
-          <li class="page-404__item page-404__item--posts">
-            <a href="#" class="page-404__link">Property Lawyers Making Life Simpler To Live</a>
-          </li>
-          <li class="page-404__item page-404__item--posts">
-            <a href="#" class="page-404__link">Property Lawyers Making Life Simpler To Live</a>
-          </li>
+          <?php for ($i = 0; $i < count($rec_articles); $i++) :
+            $article = $rec_articles[$i] ?>
+            <?php if ($i < 4) : ?>
+              <li class="page-404__item page-404__item--posts">
+                <a href="<?= $article['url'] ?>" class="page-404__link"><?= $article['title'] ?></a>
+              </li>
+            <?php endif; ?>
+          <?php endfor; ?>
         </ul>
       </div>
 
       <div class="page-404__categories">
         <h2 class="page-404__title page-404__title--2">Categories</h2>
         <ul class="page-404__list">
-          <li class="page-404__item">
-            <a href="#" class="page-404__link">Property Lawyers Making Life Simpler To Live</a>
-          </li>
-          <li class="page-404__item">
-            <a href="#" class="page-404__link">Property Lawyers Making Life Simpler To Live</a>
-          </li>
-          <li class="page-404__item">
-            <a href="#" class="page-404__link">Property Lawyers Making Life Simpler To Live</a>
-          </li>
+          <?php foreach ($cats as $cat) : ?>
+            <li class="page-404__item">
+              <a href="<?= $cat['url'] ?>" class="page-404__link"><?= $cat['category'] ?></a>
+            </li>
+          <?php endforeach; ?>
         </ul>
       </div>
 
@@ -68,183 +68,27 @@
             <button type="button" data-cat="investments" class="filter__nav-btn">Investments</button>
           </div>
           <div class="filter__cards">
-            <div class="filter__item" data-item-cat="taxes">
-              <a href="#" class="filter__item-link"></a>
-              <div class="filter__item-img">
-                <img src="images/cards/1.jpg" alt="photo" />
+            <?php foreach ($articles as $article) : ?>
+              <div class="filter__item" data-item-cat="<?= $article['cat'] ?>">
+                <a href="<?= $article['url'] ?>" class="filter__item-link"></a>
+                <div class="filter__item-img">
+                  <img src="images/<?= $article['img'] ?>" alt="<?= str_replace(['-', '.jpg'], [' ', ''],  $article['img']) ?>" />
+                </div>
+                <div class="filter__item-content">
+                  <h4 class="filter__item-title">
+                    <?= $article['title'] ?>
+                  </h4>
+                  <p class="filter__item-text">
+                    <?= substr($article['text'], 0, 100) . '...' ?>
+                  </p>
+                  <div class="filter__item-more">Read more</div>
+                </div>
+                <div class="filter__item-checks">
+                  <span class="filter__item-check"><?= $article['date'] ?></span>
+                  <span class="filter__item-check"><?= $article['category'] ?></span>
+                </div>
               </div>
-              <div class="filter__item-content">
-                <h4 class="filter__item-title">
-                  Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-                </h4>
-                <p class="filter__item-text">
-                  The worst of legal fears for a common man is to end up behind bars.
-                </p>
-                <div class="filter__item-more">Read more</div>
-              </div>
-              <div class="filter__item-checks">
-                <span class="filter__item-check">01.10.2022</span>
-                <span class="filter__item-check">Taxes in Switzerland</span>
-              </div>
-            </div>
-            <div class="filter__item" data-item-cat="business">
-              <a href="#" class="filter__item-link"></a>
-              <div class="filter__item-img">
-                <img src="images/cards/1.jpg" alt="photo" />
-              </div>
-              <div class="filter__item-content">
-                <h4 class="filter__item-title">
-                  Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-                </h4>
-                <p class="filter__item-text">
-                  The worst of legal fears for a common man is to end up behind bars.
-                </p>
-                <div class="filter__item-more">Read more</div>
-              </div>
-              <div class="filter__item-checks">
-                <span class="filter__item-check">01.10.2022</span>
-                <span class="filter__item-check">Business in Switzerland</span>
-              </div>
-            </div>
-            <div class="filter__item" data-item-cat="economic">
-              <a href="#" class="filter__item-link"></a>
-              <div class="filter__item-img">
-                <img src="images/cards/1.jpg" alt="photo" />
-              </div>
-              <div class="filter__item-content">
-                <h4 class="filter__item-title">
-                  Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-                </h4>
-                <p class="filter__item-text">
-                  The worst of legal fears for a common man is to end up behind bars.The worst of legal fears for a
-                  common man is to end up behind bars.The worst of legal fears for a common man is to end up behind
-                  bars.The worst of legal fears for a common man is to end up behind bars.
-                </p>
-                <div class="filter__item-more">Read more</div>
-              </div>
-              <div class="filter__item-checks">
-                <span class="filter__item-check">01.10.2022</span>
-                <span class="filter__item-check">Economic</span>
-              </div>
-            </div>
-            <div class="filter__item" data-item-cat="economic">
-              <a href="#" class="filter__item-link"></a>
-              <div class="filter__item-img">
-                <img src="images/cards/1.jpg" alt="photo" />
-              </div>
-              <div class="filter__item-content">
-                <h4 class="filter__item-title">
-                  Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-                </h4>
-                <p class="filter__item-text">
-                  The worst of legal fears for a common man is to end up behind bars.
-                </p>
-                <div class="filter__item-more">Read more</div>
-              </div>
-              <div class="filter__item-checks">
-                <span class="filter__item-check">01.10.2022</span>
-                <span class="filter__item-check">economic</span>
-              </div>
-            </div>
-            <div class="filter__item" data-item-cat="economic">
-              <a href="#" class="filter__item-link"></a>
-              <div class="filter__item-img">
-                <img src="images/cards/1.jpg" alt="photo" />
-              </div>
-              <div class="filter__item-content">
-                <h4 class="filter__item-title">
-                  Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-                </h4>
-                <p class="filter__item-text">
-                  The worst of legal fears for a common man is to end up behind bars.
-                </p>
-                <div class="filter__item-more">Read more</div>
-              </div>
-              <div class="filter__item-checks">
-                <span class="filter__item-check">01.10.2022</span>
-                <span class="filter__item-check">economic</span>
-              </div>
-            </div>
-            <div class="filter__item" data-item-cat="economic">
-              <a href="#" class="filter__item-link"></a>
-              <div class="filter__item-img">
-                <img src="images/cards/1.jpg" alt="photo" />
-              </div>
-              <div class="filter__item-content">
-                <h4 class="filter__item-title">
-                  Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-                </h4>
-                <p class="filter__item-text">
-                  The worst of legal fears for a common man is to end up behind bars.The worst of legal fears for a
-                  common man is to end up behind bars.The worst of legal fears for a common man is to end up behind
-                  bars.The worst of legal fears for a common man is to end up behind bars.
-                </p>
-                <div class="filter__item-more">Read more</div>
-              </div>
-              <div class="filter__item-checks">
-                <span class="filter__item-check">01.10.2022</span>
-                <span class="filter__item-check">Economic</span>
-              </div>
-            </div>
-            <div class="filter__item" data-item-cat="economic">
-              <a href="#" class="filter__item-link"></a>
-              <div class="filter__item-img">
-                <img src="images/cards/1.jpg" alt="photo" />
-              </div>
-              <div class="filter__item-content">
-                <h4 class="filter__item-title">
-                  Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-                </h4>
-                <p class="filter__item-text">
-                  The worst of legal fears for a common man is to end up behind bars.
-                </p>
-                <div class="filter__item-more">Read more</div>
-              </div>
-              <div class="filter__item-checks">
-                <span class="filter__item-check">01.10.2022</span>
-                <span class="filter__item-check">economic</span>
-              </div>
-            </div>
-            <div class="filter__item" data-item-cat="economic">
-              <a href="#" class="filter__item-link"></a>
-              <div class="filter__item-img">
-                <img src="images/cards/1.jpg" alt="photo" />
-              </div>
-              <div class="filter__item-content">
-                <h4 class="filter__item-title">
-                  Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-                </h4>
-                <p class="filter__item-text">
-                  The worst of legal fears for a common man is to end up behind bars.
-                </p>
-                <div class="filter__item-more">Read more</div>
-              </div>
-              <div class="filter__item-checks">
-                <span class="filter__item-check">01.10.2022</span>
-                <span class="filter__item-check">economic</span>
-              </div>
-            </div>
-            <div class="filter__item" data-item-cat="economic">
-              <a href="#" class="filter__item-link"></a>
-              <div class="filter__item-img">
-                <img src="images/cards/1.jpg" alt="photo" />
-              </div>
-              <div class="filter__item-content">
-                <h4 class="filter__item-title">
-                  Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-                </h4>
-                <p class="filter__item-text">
-                  The worst of legal fears for a common man is to end up behind bars.The worst of legal fears for a
-                  common man is to end up behind bars.The worst of legal fears for a common man is to end up behind
-                  bars.The worst of legal fears for a common man is to end up behind bars.
-                </p>
-                <div class="filter__item-more">Read more</div>
-              </div>
-              <div class="filter__item-checks">
-                <span class="filter__item-check">01.10.2022</span>
-                <span class="filter__item-check">Economic</span>
-              </div>
-            </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
@@ -256,13 +100,13 @@
             <a href="/" class="page-404__link">Homepage</a>
           </li>
           <li class="page-404__item  page-404__item--contacts">
-            <a href="calculator" class="page-404__link">Tax calculator</a>
+            <a href="tax-calculator" class="page-404__link">Tax calculator</a>
           </li>
           <li class="page-404__item  page-404__item--contacts">
-            <a href="verify" class="page-404__link">Verify the company name</a>
+            <a href="verify-the-company-name" class="page-404__link">Verify the company name</a>
           </li>
           <li class="page-404__item  page-404__item--contacts">
-            <a href="formation" class="page-404__link">Company formation online</a>
+            <a href="company-formation-online" class="page-404__link">Company formation online</a>
           </li>
         </ul>
       </div>

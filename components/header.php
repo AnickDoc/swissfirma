@@ -1,5 +1,8 @@
-<?php require_once 'connect.php'?>
-
+<?php
+include_once 'connect.php';
+$articles = get_articles();
+$cats = get_cat();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,21 +71,11 @@
           </div>
           <nav class="header__nav">
             <ul class="header__nav-list">
-              <li class="header__nav-item">
-                <a href="page-cards" class="header__nav-link">BUSINESS IN SWITZERLAND</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="page-cards" class="header__nav-link">TAXES IN SWITZERLAND</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="page-cards" class="header__nav-link">ECONOMIC</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="page-cards" class="header__nav-link">IMMIGRATION</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="page-cards" class="header__nav-link">INVESTMENTS</a>
-              </li>
+              <?php foreach ($cats as $cat) : ?>
+                <li class="header__nav-item">
+                  <a href="<?= $cat['url'] ?>" class="header__nav-link"><?= $cat['category'] ?></a>
+                </li>
+              <?php endforeach; ?>
               <li class="header__nav-item">
                 <a href="contacts" class="header__nav-link">CONTACTS</a>
               </li>

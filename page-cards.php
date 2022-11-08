@@ -1,195 +1,44 @@
 <?php
-$title = "Business in Switzerland";
-$breadcrams_page = $title;
-include_once 'components/header.php' ?>
+$article_cat = $_GET['route'];
+include_once 'connect.php';
+$cats = get_cat();
+$articles = get_articles();
+foreach ($articles as $article) {
+  if ($article['cat'] == $article_cat) {
+    $title = $article['category'];
+    $breadcrams_page = $title;
+  }
+}
+include_once 'components/header.php';
+?>
 
 <main class="main">
   <?php include_once 'components/breadcrams.php' ?>
 
   <section class="cards">
     <div class="container">
-      <h1 class="cards__title title">BUSINESS IN SWITZERLAND</h1>
+      <?php foreach ($cats as $cat) : ?>
+        <?php if ($cat['cat'] == $article_cat) : ?>
+          <h1 class="cards__title title"><?= $cat['category'] ?></h1>
+        <?php endif; ?>
+      <?php endforeach; ?>
       <div class="cards__box box">
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/4.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">05-09-2018</p>
-            <h4 class="box__item-title">
-              How to Establish a Business in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/5.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">16-02-2018</p>
-            <h4 class="box__item-title">
-              Opening a Corporation in 2022 - your guideline for business starting in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/6.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">05-03-2018</p>
-            <h4 class="box__item-title">
-              Double Tax Treaties in Switzerland — your guideline for business starting in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/4.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">05-09-2018</p>
-            <h4 class="box__item-title">
-              How to Establish a Business in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/5.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">16-02-2018</p>
-            <h4 class="box__item-title">
-              Opening a Corporation in 2022 - your guideline for business starting in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/6.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">05-03-2018</p>
-            <h4 class="box__item-title">
-              Double Tax Treaties in Switzerland — your guideline for business starting in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/4.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">05-09-2018</p>
-            <h4 class="box__item-title">
-              How to Establish a Business in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/5.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">16-02-2018</p>
-            <h4 class="box__item-title">
-              Opening a Corporation in 2022 - your guideline for business starting in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/6.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">05-03-2018</p>
-            <h4 class="box__item-title">
-              Double Tax Treaties in Switzerland — your guideline for business starting in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/4.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">05-09-2018</p>
-            <h4 class="box__item-title">
-              How to Establish a Business in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/5.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">16-02-2018</p>
-            <h4 class="box__item-title">
-              Opening a Corporation in 2022 - your guideline for business starting in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/6.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">05-03-2018</p>
-            <h4 class="box__item-title">
-              Double Tax Treaties in Switzerland — your guideline for business starting in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/4.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">05-09-2018</p>
-            <h4 class="box__item-title">
-              How to Establish a Business in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/5.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">16-02-2018</p>
-            <h4 class="box__item-title">
-              Opening a Corporation in 2022 - your guideline for business starting in Switzerland
-            </h4>
-          </div>
-        </div>
-        <div class="box__item">
-          <a href="#" class="box__item-link"></a>
-          <div class="box__item-img">
-            <img src="images/swissfirma/6.jpg" alt="photo" />
-          </div>
-          <div class="box__item-content">
-            <p class="box__item-data">05-03-2018</p>
-            <h4 class="box__item-title">
-              Double Tax Treaties in Switzerland — your guideline for business starting in Switzerland
-            </h4>
-          </div>
-        </div>
+        <?php foreach ($articles as $article) : ?>
+          <?php if ($article['cat'] == $article_cat) : ?>
+            <div class="box__item">
+              <a href="<?= $article['url'] ?>" class="box__item-link"></a>
+              <div class="box__item-img">
+                <img src="images/<?= $article['img'] ?>" alt="<?= str_replace(['-', '.jpg'], [' ', ''],  $article['img']) ?>" />
+              </div>
+              <div class="box__item-content">
+                <p class="box__item-data"><?= $article['date'] ?></p>
+                <h4 class="box__item-title">
+                  <?= $article['title'] ?>
+                </h4>
+              </div>
+            </div>
+          <?php endif; ?>
+        <?php endforeach; ?>
       </div>
       <button type="button" class="cards__btn btn">Show more</button>
     </div>

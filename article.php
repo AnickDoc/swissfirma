@@ -1,7 +1,11 @@
 <?php
-$title = "Opening a Swiss Corporation (Aktiengesellschaft)";
-$breadcrams_page = $title;
-include_once 'components/header.php' ?>
+$post_id = $_GET['route'];
+include_once 'connect.php';
+$article = get_article_by_id($post_id);
+$title = $article['title'];
+$breadcrams_page = $article['title'];
+include_once 'components/header.php';
+?>
 
 <main class="main">
   <?php include_once 'components/breadcrams.php' ?>
@@ -9,69 +13,21 @@ include_once 'components/header.php' ?>
   <article class="article">
     <div class="container">
       <h1 class="article__title title">
-        Opening a Swiss Corporation (Aktiengesellschaft)
+        <?= $article['title'] ?>
       </h1>
       <div class="article__box">
-        <div class="article__img">
-          <img src="images/business/1.jpg" alt="photo" />
+        <div class="article__box-img">
+          <img src="images/<?= $article['img'] ?>" alt="<?= str_replace(['-', '.jpg'], [' ', ''],  $article['img']) ?>" />
         </div>
         <div class="article__box-inner">
-          <span class="article__box-date">16.02.2018</span>
-          <span class="article__box-author">Anna Ledenyova</span>
+          <span class="article__box-date"><?= $article['date'] ?></span>
+          <span class="article__box-author"><?= $article['author'] ?></span>
           <a href="#comments" class="article__box-link">LEAVE A comment</a>
         </div>
       </div>
-      <p>
-        In Swiss law, businesses are regulated by <a href="#">laws</a> in the Civil Code, or <a href="#">Code of Obligations</a>, which are registered to the Commercial Register located in the canton where the business is located. As Switzerland has a business focused government and financial system, foreign investors and business owners are likely to register stock corporations in Switzerland, also called <a href="#">Aktiengesellschaft</a> or Societe Anonyme.
-      </p>
-
-      <h2>
-        Requirements for setting-up a Swiss stock corporation
-      </h2>
-      <p>
-        To <a href="#">open</a> a stock corporation in Switzerland, investors must account for the minimum required number of shareholders, as well as the required start-up deposit, which is 100,000 CHF and of which a 50,000 CHF deposit s required on incorporation. This deposit will be blocked by banks up to the time of incorporation. Swiss stock corporations are permitted to issue bearer stock, but these are required to be entirely paid-up by the time of incorporation. Other share types which are available in Swiss stock companies are voting and non-voting shares. Shareholders are also held liable for obligations in relation to debts to the extent of their capital shareholders.
-        With this article people often looking at <a href="#">how to start a retail company in Swiss</a>.
-      </p>
-
-      <div class="article__video">
-        <iframe id="youtubeiframe142303952" width="100%" height="560px" src="//youtube.com/embed/A-dYLEadPhE?rel=0&amp;fmt=18&amp;html5=1&amp;showinfo=0" frameborder="0" allowfullscreen=""></iframe>
+      <div class="article__content">
+        <?= $article['text'] ?>
       </div>
-
-      <p>
-        A Swiss stock corporation is required to feature a minimum of one director, who holds Swiss residency and in the event more directors are needed, there must also be a majority of Swiss residency holders, though, directors are able to be of any nationality. Additionally, a stock corporation is unable to hold corporate directors.
-      </p>
-      <p>
-        Further requirements of a stock corporation include having a registered office as well as an auditor. All accounting and finance statements must be kept and stored annually against the register of companies. Corporations which have annual returns below 20 million CHF or a balance sheet below 10 million CHF and have less than 200 employees are permitted to present fiscal statements every 2 years.
-      </p>
-      <h2>
-        Incorporation procedure for Swiss stock companies
-      </h2>
-      <p>
-        When incorporating a stock company in Switzerland, the first step is always to choose a unique name and seek approval for it with the Commercial Registry. From this, a public deed is prepared by a notary with the passports of owners as well as the articles of association. This can take up to 20 business days.
-      </p>
-      <p>
-        After this, the following documents should be submitted to the <a href="#">Swiss Federal Trade Register</a>:
-      </p>
-      <ul>
-        <li>a notarised deed or incorporation</li>
-        <li>The articles of incorporation</li>
-        <li>A capital deposit statement from the bank</li>
-        <li>A statement outlining the directors</li>
-        <li>A shareholder statement</li>
-        <li>A notarised application form signed by a company representative</li>
-      </ul>
-      <h2>
-        Taxation of the Swiss stock corporation
-      </h2>
-      <p>
-        Swiss tax rates for a stock corporation are varied between 11.48% and 24.43%, which depends on the canton they are established in. This tax is shaped by federal, cantonal and municipal tax rates, although applications for deceptions are available for new businesses, so there are lower rates available.
-      </p>
-      <p>
-        Withholding tax dividends is 35% in Switzerland, although tax treaties are able to reduce this to 0% depending on the country. In Switzerland, interest and royalties are not charged withholding tax.
-      </p>
-      <p>
-        Contact one of our consultants for more specialised information on the Civil code, taxation information or assistance with founding a company in Switzerland.
-      </p>
     </div>
   </article>
 
@@ -118,183 +74,27 @@ include_once 'components/header.php' ?>
           <button type="button" data-cat="investments" class="filter__nav-btn">Investments</button>
         </div>
         <div class="filter__cards">
-          <div class="filter__item" data-item-cat="taxes">
-            <a href="#" class="filter__item-link"></a>
-            <div class="filter__item-img">
-              <img src="images/cards/1.jpg" alt="photo" />
+          <?php foreach ($articles as $article) : ?>
+            <div class="filter__item" data-item-cat="<?= $article['cat'] ?>">
+              <a href="<?= $article['url'] ?>" class="filter__item-link"></a>
+              <div class="filter__item-img">
+                <img src="images/<?= $article['img'] ?>" alt="<?= str_replace(['-', '.jpg'], [' ', ''],  $article['img']) ?>" />
+              </div>
+              <div class="filter__item-content">
+                <h4 class="filter__item-title">
+                  <?= $article['title'] ?>
+                </h4>
+                <p class="filter__item-text">
+                  <?= substr($article['text'], 0, 100) . '...' ?>
+                </p>
+                <div class="filter__item-more">Read more</div>
+              </div>
+              <div class="filter__item-checks">
+                <span class="filter__item-check"><?= $article['date'] ?></span>
+                <span class="filter__item-check"><?= $article['category'] ?></span>
+              </div>
             </div>
-            <div class="filter__item-content">
-              <h4 class="filter__item-title">
-                Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-              </h4>
-              <p class="filter__item-text">
-                The worst of legal fears for a common man is to end up behind bars.
-              </p>
-              <div class="filter__item-more">Read more</div>
-            </div>
-            <div class="filter__item-checks">
-              <span class="filter__item-check">01.10.2022</span>
-              <span class="filter__item-check">Taxes in Switzerland</span>
-            </div>
-          </div>
-          <div class="filter__item" data-item-cat="business">
-            <a href="#" class="filter__item-link"></a>
-            <div class="filter__item-img">
-              <img src="images/cards/1.jpg" alt="photo" />
-            </div>
-            <div class="filter__item-content">
-              <h4 class="filter__item-title">
-                Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-              </h4>
-              <p class="filter__item-text">
-                The worst of legal fears for a common man is to end up behind bars.
-              </p>
-              <div class="filter__item-more">Read more</div>
-            </div>
-            <div class="filter__item-checks">
-              <span class="filter__item-check">01.10.2022</span>
-              <span class="filter__item-check">Business in Switzerland</span>
-            </div>
-          </div>
-          <div class="filter__item" data-item-cat="economic">
-            <a href="#" class="filter__item-link"></a>
-            <div class="filter__item-img">
-              <img src="images/cards/1.jpg" alt="photo" />
-            </div>
-            <div class="filter__item-content">
-              <h4 class="filter__item-title">
-                Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-              </h4>
-              <p class="filter__item-text">
-                The worst of legal fears for a common man is to end up behind bars.The worst of legal fears for a
-                common man is to end up behind bars.The worst of legal fears for a common man is to end up behind
-                bars.The worst of legal fears for a common man is to end up behind bars.
-              </p>
-              <div class="filter__item-more">Read more</div>
-            </div>
-            <div class="filter__item-checks">
-              <span class="filter__item-check">01.10.2022</span>
-              <span class="filter__item-check">Economic</span>
-            </div>
-          </div>
-          <div class="filter__item" data-item-cat="economic">
-            <a href="#" class="filter__item-link"></a>
-            <div class="filter__item-img">
-              <img src="images/cards/1.jpg" alt="photo" />
-            </div>
-            <div class="filter__item-content">
-              <h4 class="filter__item-title">
-                Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-              </h4>
-              <p class="filter__item-text">
-                The worst of legal fears for a common man is to end up behind bars.
-              </p>
-              <div class="filter__item-more">Read more</div>
-            </div>
-            <div class="filter__item-checks">
-              <span class="filter__item-check">01.10.2022</span>
-              <span class="filter__item-check">economic</span>
-            </div>
-          </div>
-          <div class="filter__item" data-item-cat="economic">
-            <a href="#" class="filter__item-link"></a>
-            <div class="filter__item-img">
-              <img src="images/cards/1.jpg" alt="photo" />
-            </div>
-            <div class="filter__item-content">
-              <h4 class="filter__item-title">
-                Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-              </h4>
-              <p class="filter__item-text">
-                The worst of legal fears for a common man is to end up behind bars.
-              </p>
-              <div class="filter__item-more">Read more</div>
-            </div>
-            <div class="filter__item-checks">
-              <span class="filter__item-check">01.10.2022</span>
-              <span class="filter__item-check">economic</span>
-            </div>
-          </div>
-          <div class="filter__item" data-item-cat="economic">
-            <a href="#" class="filter__item-link"></a>
-            <div class="filter__item-img">
-              <img src="images/cards/1.jpg" alt="photo" />
-            </div>
-            <div class="filter__item-content">
-              <h4 class="filter__item-title">
-                Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-              </h4>
-              <p class="filter__item-text">
-                The worst of legal fears for a common man is to end up behind bars.The worst of legal fears for a
-                common man is to end up behind bars.The worst of legal fears for a common man is to end up behind
-                bars.The worst of legal fears for a common man is to end up behind bars.
-              </p>
-              <div class="filter__item-more">Read more</div>
-            </div>
-            <div class="filter__item-checks">
-              <span class="filter__item-check">01.10.2022</span>
-              <span class="filter__item-check">Economic</span>
-            </div>
-          </div>
-          <div class="filter__item" data-item-cat="economic">
-            <a href="#" class="filter__item-link"></a>
-            <div class="filter__item-img">
-              <img src="images/cards/1.jpg" alt="photo" />
-            </div>
-            <div class="filter__item-content">
-              <h4 class="filter__item-title">
-                Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-              </h4>
-              <p class="filter__item-text">
-                The worst of legal fears for a common man is to end up behind bars.
-              </p>
-              <div class="filter__item-more">Read more</div>
-            </div>
-            <div class="filter__item-checks">
-              <span class="filter__item-check">01.10.2022</span>
-              <span class="filter__item-check">economic</span>
-            </div>
-          </div>
-          <div class="filter__item" data-item-cat="economic">
-            <a href="#" class="filter__item-link"></a>
-            <div class="filter__item-img">
-              <img src="images/cards/1.jpg" alt="photo" />
-            </div>
-            <div class="filter__item-content">
-              <h4 class="filter__item-title">
-                Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-              </h4>
-              <p class="filter__item-text">
-                The worst of legal fears for a common man is to end up behind bars.
-              </p>
-              <div class="filter__item-more">Read more</div>
-            </div>
-            <div class="filter__item-checks">
-              <span class="filter__item-check">01.10.2022</span>
-              <span class="filter__item-check">economic</span>
-            </div>
-          </div>
-          <div class="filter__item" data-item-cat="economic">
-            <a href="#" class="filter__item-link"></a>
-            <div class="filter__item-img">
-              <img src="images/cards/1.jpg" alt="photo" />
-            </div>
-            <div class="filter__item-content">
-              <h4 class="filter__item-title">
-                Legal Guidance for Bail Bonds The common man might not fear the lord but he sure fears the law
-              </h4>
-              <p class="filter__item-text">
-                The worst of legal fears for a common man is to end up behind bars.The worst of legal fears for a
-                common man is to end up behind bars.The worst of legal fears for a common man is to end up behind
-                bars.The worst of legal fears for a common man is to end up behind bars.
-              </p>
-              <div class="filter__item-more">Read more</div>
-            </div>
-            <div class="filter__item-checks">
-              <span class="filter__item-check">01.10.2022</span>
-              <span class="filter__item-check">Economic</span>
-            </div>
-          </div>
+          <?php endforeach; ?>
         </div>
         <div class="filter__btns">
           <button type="button" class="filter__btn btn">SHOW more</button>
