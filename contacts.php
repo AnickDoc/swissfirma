@@ -12,19 +12,19 @@ include_once 'components/header.php' ?>
       <span class="contacts__phone">Phone:</span>
       <a href="tel:+41445152590" class="contacts__link">+41 44 515 25 90</a>
 
-      <form action="#" method="POST" class="contacts__form">
+      <form class="contacts__form popup-form">
         <div class="contacts__form-inputs">
           <label class="contact-form__label">
-            <input type="text" autocomplete="name" name="Name" class="contact-form__input" value="" placeholder="Your name*" data-placeholder-tmp="" required />
+            <input type="text" name="name" class="contact-form__input" placeholder="Your name*" required />
           </label>
           <label class="contact-form__label">
-            <input type="text" name="Input" class="contact-form__input" value="" placeholder="Country*" data-placeholder-tmp="" required />
+            <input type="text" name="country" class="contact-form__input" placeholder="Country*" required />
           </label>
           <label class="contact-form__label">
-            <input type="tel" autocomplete="tel" name="Phone" class="contact-form__input" value="" placeholder="Phone*" data-placeholder-tmp="" required />
+            <input type="tel" name="phone" class="contact-form__input" placeholder="Phone*" required />
           </label>
           <label class="contact-form__label">
-            <input type="text" autocomplete="email" name="Email" class="contact-form__input" value="" placeholder="E-mail*" data-placeholder-tmp="" required />
+            <input type="text" name="email" class="contact-form__input" placeholder="E-mail*" required />
           </label>
         </div>
 

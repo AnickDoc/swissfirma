@@ -71,55 +71,53 @@ $(document).ready(function () {
     $this.attr('placeholder', $this.data('placeholder-tmp'));
   });
 
+  //Form;
+  $(".popup-form").on("submit", function (e) {
+    $.ajax({
+      url: "scripts/send.php",
+      type: "POST",
+      data: $(this).serialize(),
+    }).done(function () {
+      $(".popup__form").css("display", "none")
+      $(".popup__tnx").css("display", "block")
+    });
+    e.preventDefault();
+  });
 
+  $(".verify__form").on("submit", function (e) {
+    $.ajax({
+      url: "scripts/verify-send.php",
+      type: "POST",
+      data: $(this).serialize(),
+    }).done(function () {
+      $(".verify__inner").css("display", "none")
+      $(".verify__tnx").css("display", "block")
+    });
+    e.preventDefault();
+  });
 
+  $(".calculator__form").on("submit", function (e) {
+    $.ajax({
+      url: "scripts/tax-send.php",
+      type: "POST",
+      data: $(this).serialize(),
+    }).done(function () {
+      $(".calculator__inner").css("display", "none")
+      $(".calculator__tnx").css("display", "block")
+    });
+    e.preventDefault();
+  });
 
-
-
-
-  ////lacation
-  // ymaps.ready(init);
-  // function init() {
-  //   ymaps.geolocation.get({
-  //     provider: "yandex"
-  //   })
-  //     .then(function (res) {
-  //       var g = res.geoObjects.get(0);
-  //       $("input[name=city]").val(g.getLocalities()[0]);
-  //       $("input[name=new_region]").val(g.getAdministrativeAreas()[0]);
-  //     })
-  //     .catch(function (err) {
-  //       console.log('Не удалось установить местоположение', err);
-  //     });
-  // }
-
-  // //mask;
-  // $.mask.definitions["9"] = false;
-  // $.mask.definitions["5"] = "[0-9]";
-  // $("input[type=tel]")
-  //   .mask("8(955) 555-5555")
-  //   .on("click", function () {
-  //     $(this).trigger("focus");
-  //   });
-
-  // //form ajax;
-  //$("form").on("submit", function (e) {
-  //    $.ajax({
-  //        url: "scripts/",
-  //        type: "POST",
-  //        data: $(this).serialize(),
-  //    }).done(function () {
-  //        location.href = "tnx.php";
-  //    });
-  //    e.preventDefault();
-  //});
-
-  // // scroll on click
-  // $('a.cp-s1__link').on('click', function (e) {
-  //   e.preventDefault();
-  //   $('html, body').animate({
-  //     scrollTop: $($.attr(this, 'href')).offset().top
-  //   }, 1500);
-  // });
+  $(".company__form").on("submit", function (e) {
+    $.ajax({
+      url: "scripts/company-send.php",
+      type: "POST",
+      data: $(this).serialize(),
+    }).done(function () {
+      $(".company__inner").css("display", "none")
+      $(".company__tnx").css("display", "block")
+    });
+    e.preventDefault();
+  });
 });
 

@@ -14,8 +14,8 @@ include_once 'components/header.php' ?>
       <div class="all-news__filter filter">
         <div class="filter__nav">
           <button type="button" data-cat="all" class="filter__nav-btn active">All</button>
-          <button type="button" data-cat="business" class="filter__nav-btn">Business in Switzerland</button>
-          <button type="button" data-cat="taxes" class="filter__nav-btn">Taxes in Switzerland</button>
+          <button type="button" data-cat="business-in-switzerland" class="filter__nav-btn">Business in Switzerland</button>
+          <button type="button" data-cat="taxes-in-switzerland" class="filter__nav-btn">Taxes in Switzerland</button>
           <button type="button" data-cat="economic" class="filter__nav-btn">Economic</button>
           <button type="button" data-cat="immigration" class="filter__nav-btn">Immigration</button>
           <button type="button" data-cat="investments" class="filter__nav-btn">Investments</button>

@@ -1,7 +1,7 @@
 <?php
 $post_id = $_GET['route'];
 include_once 'connect.php';
-$article = get_article_by_id($post_id);
+$article = get_article_two_by_id($post_id);
 $title = $article['title'];
 include_once 'components/header.php' ?>
 

@@ -1,6 +1,8 @@
 <?php
 include_once 'connect.php';
 $articles = get_articles();
+$posts = get_recent_articles();
+$cats = get_cat();
 $title = "Business in Switzerland for the reliable future of your entrepreneurship";
 include_once "components/header.php";
 ?>
@@ -25,7 +27,7 @@ include_once "components/header.php";
                 <?= $article['title'] ?>
               </h3>
               <p class="slider__item-text">
-                <?= substr($article['text'], 0, 20) ?>
+                <?= substr($article['text'], 3, 100) . "..."  ?>
               </p>
             </div>
           </div>
@@ -68,8 +70,8 @@ include_once "components/header.php";
     <div class="container">
       <div class="filter__nav">
         <button type="button" data-cat="all" class="filter__nav-btn active">All</button>
-        <button type="button" data-cat="business" class="filter__nav-btn">Business in Switzerland</button>
-        <button type="button" data-cat="taxes" class="filter__nav-btn">Taxes in Switzerland</button>
+        <button type="button" data-cat="business-in-switzerland" class="filter__nav-btn">Business in Switzerland</button>
+        <button type="button" data-cat="taxes-in-switzerland" class="filter__nav-btn">Taxes in Switzerland</button>
         <button type="button" data-cat="economic" class="filter__nav-btn">Economic</button>
         <button type="button" data-cat="immigration" class="filter__nav-btn">Immigration</button>
         <button type="button" data-cat="investments" class="filter__nav-btn">Investments</button>
@@ -111,29 +113,31 @@ include_once "components/header.php";
       <h1 class="business__title title">OPEN A BUSINESS</h1>
       <div class="business__slider slider">
         <?php foreach ($articles as $article) : ?>
-          <div class="slider__item">
-            <a href="<?= $article['url'] ?>" class="slider__item-link"></a>
-            <div class="slider__item-img">
-              <img src="images/<?= $article['img'] ?>" alt="<?= str_replace(['-', '.jpg'], [' ', ''],  $article['img']) ?>" />
-            </div>
-            <div class="slider__item-bottom">
-              <div class="slider__item-box">
-                <span class="slider__item-data"><?= $article['date'] ?></span>
-                <span class="slider__item-name"><?= $article['author'] ?></span>
+          <?php if ($article['cat'] == "taxes-in-switzerland") : ?>
+            <div class="slider__item">
+              <a href="<?= $article['url'] ?>" class="slider__item-link"></a>
+              <div class="slider__item-img">
+                <img src="images/<?= $article['img'] ?>" alt="<?= str_replace(['-', '.jpg'], [' ', ''],  $article['img']) ?>" />
               </div>
-              <h3 class="slider__item-title">
-                <?= $article['title'] ?>
-              </h3>
-              <p class="slider__item-text">
-                <?= substr($article['text'], 0, 20) ?>
-              </p>
+              <div class="slider__item-bottom">
+                <div class="slider__item-box">
+                  <span class="slider__item-data"><?= $article['date'] ?></span>
+                  <span class="slider__item-name"><?= $article['author'] ?></span>
+                </div>
+                <h3 class="slider__item-title">
+                  <?= $article['title'] ?>
+                </h3>
+                <p class="slider__item-text">
+                  <?= substr($article['text'], 3, 100) . "..." ?>
+                </p>
+              </div>
             </div>
-          </div>
+          <?php endif; ?>
         <?php endforeach; ?>
       </div>
       <div class="business__box box">
-        <?php foreach ($articles as $article) : ?>
-          <?php if ($article['id'] <= 3) : ?>
+        <?php foreach ($posts as $article) : ?>
+          <?php if ($article['id'] >= 30 && $article['id'] <= 32) : ?>
             <div class="box__item">
               <a href="<?= $article['url'] ?>" class="box__item-link"></a>
               <div class="box__item-img">

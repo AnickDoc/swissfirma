@@ -27,12 +27,133 @@ $cats = get_cat();
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="x-dns-prefetch-control" content="on">
     <!--/metatextblock-->
+    <base href="/">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/null.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
+    <!-- Zoho -->
+    <script type="text/javascript">
+      var $zoho = $zoho || {};
+      $zoho.salesiq = $zoho.salesiq || {
+        widgetcode: "3a8056e5c5379133f1db5c788689b80dad1ecdbe9e0fb3b6722990309fd80436",
+        values: {},
+        ready: function() {}
+      };
+      var d = document;
+      s = d.createElement("script");
+      s.type = "text/javascript";
+      s.id = "zsiqscript";
+      s.defer = true;
+      s.src = "https://salesiq.zoho.com/widget";
+      t = d.getElementsByTagName("script")[0];
+      t.parentNode.insertBefore(s, t);
+      d.write("<div id='zsiqwidget'></div>");
+    </script>
+    <!-- End Zoho -->
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-WZK6HDG');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSZ836PDJ7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-QSZ836PDJ7');
+    </script>
+    <!-- End Google tag (gtag.js) -->
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+    </script>
+    <!-- Google Tag Manager -->
+    <script type="text/javascript">
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-WZK6HDG');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Facebook Pixel Code -->
+    <script type="text/javascript" data-tilda-cookie-type="advertising">
+      setTimeout(function() {
+        ! function(f, b, e, v, n, t, s) {
+          if (f.fbq) return;
+          n = f.fbq = function() {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          };
+          if (!f._fbq) f._fbq = n;
+          n.push = n;
+          n.loaded = !0;
+          n.version = '2.0';
+          n.agent = 'pltilda';
+          n.queue = [];
+          t = b.createElement(e);
+          t.async = !0;
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t, s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '763738298059036');
+        fbq('track', 'PageView');
+      }, 2000);
+    </script>
+    <!-- End Facebook Pixel Code -->
+    <script type="text/javascript">
+      (function() {
+        if ((/bot|google|yandex|baidu|bing|msn|duckduckbot|teoma|slurp|crawler|spider|robot|crawling|facebook/i.test(navigator.userAgent)) === false && typeof(sessionStorage) != 'undefined' && sessionStorage.getItem('visited') !== 'y' && document.visibilityState) {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = '@media screen and (min-width: 980px) {.t-records {opacity: 0;}.t-records_animated {-webkit-transition: opacity ease-in-out .2s;-moz-transition: opacity ease-in-out .2s;-o-transition: opacity ease-in-out .2s;transition: opacity ease-in-out .2s;}.t-records.t-records_visible {opacity: 1;}}';
+          document.getElementsByTagName('head')[0].appendChild(style);
+
+          function t_setvisRecs() {
+            var alr = document.querySelectorAll('.t-records');
+            Array.prototype.forEach.call(alr, function(el) {
+              el.classList.add("t-records_animated");
+            });
+            setTimeout(function() {
+              Array.prototype.forEach.call(alr, function(el) {
+                el.classList.add("t-records_visible");
+              });
+              sessionStorage.setItem("visited", "y");
+            }, 400);
+          }
+          document.addEventListener('DOMContentLoaded', t_setvisRecs);
+        }
+      })();
+    </script>
   </head>
 
 <body>

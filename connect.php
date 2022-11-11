@@ -16,6 +16,28 @@ function get_articles(){
   return $articles;
 }
 
+function get_articles_two()
+{
+
+  global $connect;
+  $sql = "SELECT * FROM `articles-two`";
+  $result = mysqli_query($connect, $sql);
+  $articles = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+  return $articles;
+}
+
+function get_article_two_by_id($id)
+{
+
+  global $connect;
+  $sql = "SELECT * FROM `articles-two` WHERE id = " . $id;
+  $result = mysqli_query($connect, $sql);
+  $article = mysqli_fetch_assoc($result);
+
+  return $article;
+}
+
 function get_article_by_id($id){
 
   global $connect;
@@ -43,4 +65,14 @@ function get_recent_articles(){
   $rec_articles = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
   return $rec_articles;
+}
+
+function get_reviews(){
+
+  global $connect;
+  $sql = "SELECT * FROM `reviews`";
+  $result = mysqli_query($connect, $sql);
+  $reviews = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+  return $reviews;
 }

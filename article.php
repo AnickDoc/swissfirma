@@ -2,13 +2,27 @@
 $post_id = $_GET['route'];
 include_once 'connect.php';
 $article = get_article_by_id($post_id);
+$reviews = get_reviews();
 $title = $article['title'];
-$breadcrams_page = $article['title'];
 include_once 'components/header.php';
 ?>
 
 <main class="main">
-  <?php include_once 'components/breadcrams.php' ?>
+  <div class="breadcrams">
+    <div class="container">
+      <ul class="breadcrams__inner">
+        <li class="breadcrams__item">
+          <a href="/" class="breadcrams__link">Home</a>
+        </li>
+        <li class="breadcrams__item">
+          <a href="<?= "/" . $article['cat'] ?>" class="breadcrams__link"><?= $article['category'] ?></a>
+        </li>
+        <li class="breadcrams__item">
+          <span class="breadcrams__link"><?= $article['title'] ?></span>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <article class="article">
     <div class="container">
@@ -22,7 +36,7 @@ include_once 'components/header.php';
         <div class="article__box-inner">
           <span class="article__box-date"><?= $article['date'] ?></span>
           <span class="article__box-author"><?= $article['author'] ?></span>
-          <a href="#comments" class="article__box-link">LEAVE A comment</a>
+          <a href="#reviews" class="article__box-link">LEAVE A REVIEWS</a>
         </div>
       </div>
       <div class="article__content">
@@ -31,32 +45,45 @@ include_once 'components/header.php';
     </div>
   </article>
 
-  <section class="comments" id="comments">
+  <section class="reviews" id="reviews">
     <div class="container">
-      <h3 class="comments__title title">COMMENTS</h3>
-      <div class="comments__inner">
-        <div id="disqus_thread">
-          <iframe id="dsq-app7825" name="dsq-app7825" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="https://disqus.com/embed/comments/?base=default&amp;f=swissfirma-com&amp;t_u=https%3A%2F%2Fswissfirma.com%2Fopening-swiss-corporation-aktiengesellschaft%2F&amp;t_d=Opening%20a%20Corporation%20in%202022%20-%20your%20guideline%20for%20business%20starting%20in%20Switzerland&amp;t_t=Opening%20a%20Corporation%20in%202022%20-%20your%20guideline%20for%20business%20starting%20in%20Switzerland&amp;s_o=default#version=0a8def5711578064b1e1f551873450b4" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 358px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe>
+      <div class="reviews__inner">
+        <div class="reviews__content">
+          <h3 class="reviews__title title">REVIEWS</h3>
+          <p class="reviews__text">
+            We have been in business for more than 10 years and are experienced in resolving many clients' issues.
+            From opening a company in Switzerland and obtaining holding status to debt collection domestically and internationally (enforcement of Court orders).
+          </p>
+          <p class="reviews__text">
+            You can expect fast responses and high-quality services when you choose us.
+          </p>
+          <p class="reviews__text">
+            Compare us with our competitors!
+          </p>
         </div>
-        <script>
-          /**
-           *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-           *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-          /*
-          var disqus_config = function () {
-          this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-          this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-          };
-          */
-          (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document,
-              s = d.createElement('script');
-            s.src = 'https://swissfirma-com.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <div class="reviews__slider">
+          <div class="reviews__slider-inner">
+            <?php foreach ($reviews as $rew) : ?>
+              <div class="reviews__item">
+                <div class="reviews__item-img">
+                  <img src="images/<?= $rew['img'] ?>" alt="<?= str_replace(['-', '.jpg'], [' ', ''],  $rew['img']) ?>" />
+                </div>
+                <div class="reviews__item-box">
+                  <div class="reviews__item-top">
+                    <span class="reviews__item-name"><?= $rew['author'] ?></span>
+                    <span class="reviews__item-country"><?= $rew['country'] ?></span>
+                  </div>
+                  <h4 class="reviews__item-title">
+                    <?= $rew['title'] ?>
+                  </h4>
+                  <p class="reviews__item-text">
+                    <?= $rew['text'] ?>
+                  </p>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -67,8 +94,8 @@ include_once 'components/header.php';
       <div class="other-filter filter">
         <div class="filter__nav">
           <button type="button" data-cat="all" class="filter__nav-btn active">All</button>
-          <button type="button" data-cat="business" class="filter__nav-btn">Business in Switzerland</button>
-          <button type="button" data-cat="taxes" class="filter__nav-btn">Taxes in Switzerland</button>
+          <button type="button" data-cat="business-in-switzerland" class="filter__nav-btn">Business in Switzerland</button>
+          <button type="button" data-cat="taxes-in-switzerland" class="filter__nav-btn">Taxes in Switzerland</button>
           <button type="button" data-cat="economic" class="filter__nav-btn">Economic</button>
           <button type="button" data-cat="immigration" class="filter__nav-btn">Immigration</button>
           <button type="button" data-cat="investments" class="filter__nav-btn">Investments</button>
@@ -110,6 +137,25 @@ include_once 'components/header.php';
 
 <?php include_once 'components/footer.php' ?>
 <script>
+  //Slider reviews
+  $(".reviews__slider-inner").slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 1
+      },
+      breakpoint: 762,
+      settings: {
+        slidesToShow: 2
+      },
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 1
+      }
+    }]
+  });
   //Scroll on click
   $('a.article__box-link').on('click', function(e) {
     e.preventDefault();
