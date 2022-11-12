@@ -4,6 +4,9 @@ $articles = get_articles();
 $posts = get_recent_articles();
 $cats = get_cat();
 $title = "Business in Switzerland for the reliable future of your entrepreneurship";
+$meta_title = "";
+$meta_desc = "";
+$meta_keywords = "";
 include_once "components/header.php";
 ?>
 

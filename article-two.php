@@ -3,6 +3,9 @@ $post_id = $_GET['route'];
 include_once 'connect.php';
 $article = get_article_two_by_id($post_id);
 $title = $article['title'];
+$meta_title = $article['meta-title'];
+$meta_desc = $article['meta-desc'];
+$meta_keywords = $article['meta-keywords'];
 include_once 'components/header.php' ?>
 
 <main class="main">

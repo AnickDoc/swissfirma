@@ -16,18 +16,18 @@ $cats = get_cat();
     <!--metatextblock-->
     <title><?= $title ?></title>
     <meta name="description" content="All information about the start business of all kinds in Switzerland. Samples, budgets and the timeline.">
-    <meta name="keywords" content="Business in Switzerland, business, switzerland">
+    <meta name="keywords" content="<?= $meta_keywords ?>">
     <meta property="og:url" content="http://swissfirma.com">
-    <meta property="og:title" content="Business in Switzerland for the reliable future of your entrepreneurship.">
-    <meta property="og:description" content="All information about the start business of all kinds in Switzerland. Samples, budgets and the timeline.">
+    <meta property="og:title" content="<?= $meta_title ?>">
+    <meta property="og:description" content="<?= $meta_desc ?>">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/business-in-switzerl.jpeg">
+    <meta property="og:image" content="https://swissfirma.com/images/business-in-switzerl.jpg">
     <link rel="canonical" href="http://swissfirma.com">
     <meta property="fb:app_id" content="257953674358265">
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="x-dns-prefetch-control" content="on">
     <!--/metatextblock-->
-    <base href="/">
+    <base href="https://swissfirma.com/">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
     <link rel="stylesheet" href="css/slick.css">

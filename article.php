@@ -4,6 +4,9 @@ include_once 'connect.php';
 $article = get_article_by_id($post_id);
 $reviews = get_reviews();
 $title = $article['title'];
+$meta_title = $article['meta-title'];
+$meta_desc = $article['meta-desc'];
+$meta_keywords = $article['meta-keywords'];
 include_once 'components/header.php';
 ?>
 

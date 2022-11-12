@@ -4,6 +4,9 @@ $articles = get_articles();
 $cats = get_cat();
 $rec_articles = get_recent_articles();
 $title = "404: Page not found";
+$meta_title = "";
+$meta_desc = "";
+$meta_keywords = "";
 include_once 'components/header.php' ?>
 
 <main class="main">

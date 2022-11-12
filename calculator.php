@@ -1,5 +1,8 @@
 <?php
 $title = "Tax calculator";
+$meta_title = "";
+$meta_desc = "";
+$meta_keywords = "";
 $breadcrams_page = $title;
 include_once 'components/header.php' ?>
 

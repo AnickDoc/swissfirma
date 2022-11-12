@@ -9,6 +9,9 @@ foreach ($articles as $article) {
     $breadcrams_page = $title;
   }
 }
+$meta_title = "";
+$meta_desc = "";
+$meta_keywords = "";
 include_once 'components/header.php';
 ?>
 

@@ -1,5 +1,8 @@
 <?php
 $title = "Contacts — Swissfirma";
+$meta_title = "";
+$meta_desc = "";
+$meta_keywords = "";
 $breadcrams_page = "Contacts";
 include_once 'components/header.php' ?>
 
